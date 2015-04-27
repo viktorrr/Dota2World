@@ -1,0 +1,44 @@
+<div class="container" ng-cloak ng-controller="PlayerDetailsCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">Players overview - {{ player.nickname }}</h1>
+            <ol class="breadcrumb">
+                <li><a href="#/players">Players</a></li>
+                <li><a href="#/players/{{ player.objectId }}">{{ player.nickname }}</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row" id="player-details-container">
+        <div class="jumbotron clearfix">
+        <div class="col-md-8">
+            <p><strong>Name: </strong>{{ player.firstName + " " + player.lastName }}</p>
+            <p><strong>Nickname: </strong>{{ player.nickname }}</p>
+            <p><strong>Team: </strong>{{ player.team.name }}</p>
+            <p><strong>Country: </strong>{{ player.country }}</p>
+            <p><strong>Record (w/l): </strong>{{ player.wins + " / " + player.loses + " (" }}{{ (player.wins / (player.wins + player.loses) * 100 ) | number : 2  }} %)</p>
+            <p><strong>Birth: </strong>{{ player.birth | date}} </p>
+            <p><strong>Common Team Role(s): </strong>{{ player.position.name }}</p>
+            <p><strong>Social media links:</strong></p>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="{{ 'http://twitch.tv/' + player.twitch }}"> <i class="fa fa-twitch fa-2x"></i></a>
+                </li>
+                <li>
+                    <a href="{{ 'http://facebook.com/' + player.facebook }}"> <i class="fa fa-facebook fa-2x"></i></a>
+                </li>
+                <li>
+                    <a href="{{ 'http://twitter.com/' + player.twitter }}"> <i class="fa fa-twitter fa-2x"></i></a>
+                </li>
+                <li>
+                    <a href="http://steampowered.com"> <i class="fa fa-steam fa-2x"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img class="image-container" src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" alt="{{ player.nickname }}"/>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

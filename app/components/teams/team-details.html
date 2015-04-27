@@ -1,0 +1,43 @@
+<div class="container" ng-controller="TeamDetailsCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">Teams</h1>
+            <ol class="breadcrumb">
+                <li><a href="#/teams">Teams</a></li>
+                <li class="active">{{ team.name }}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Current roster</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nickname</th>
+                                <th>Name</th>
+                                <th>Join date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="player in players">
+                                <td>{{ player.nickname }}</td>
+                                <td>{{ player.firstName + " " + player.lastName }}</td>
+                                <td>{{ player.teamJoinDate.iso | date : 'MM/dd/yyyy'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img class="image-container" src="assets/images/teams/{{ team.name + '.png' }}" alt="C9"/></div>
+        </div>
+    </div>
+</div>

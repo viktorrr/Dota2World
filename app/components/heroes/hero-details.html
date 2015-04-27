@@ -1,0 +1,70 @@
+<div class="container" ng-cloak ng-controller="HeroDetailsCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">Heroes overview - {{ hero.name }}</h1>
+            <ol class="breadcrumb">
+                <li><a href="#/heroes">Heroes</a></li>
+                <li class="active">{{ hero.name }}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                <strong>Show all skills:</strong>
+                <button ng-click="showAndHideAbilities()" class="btn btn-primary btn-sm pull-right">{{ shkillsShowText }}</button>
+            </p>
+            <br/>
+            <p>
+                <strong>Show lore:</strong>
+                <button ng-click="showAndHideLore()" class="btn btn-primary btn-sm pull-right">{{ loreShowText }}</button>
+            </p>
+            <hr/>
+            <p ng-repeat="(type, value) in hero.stats">
+                <img src="{{ 'assets/images/heroes/' + type + '-icon.png' }}" alt="{{ type }}"/> <strong> {{ type }}:</strong> {{ value }} (per level)
+            </p>
+            <hr/>
+            <ul class="list-group">
+                <li class="list-group-item active text-center">
+                    <strong>Ultimate: {{ hero.skills.ultimate.name }}</strong>
+                </li>
+                <li ng-repeat="(info, value) in hero.skills.ultimate.info" class="list-group-item">
+                    {{ info }}:</strong> {{ value}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div ng-show="skillsShown">
+                <div ng-repeat="(key, value) in hero.skills.abilities">
+                    <ul class="list-group">
+                        <li class="list-group-item active">
+                            <strong>{{ hero.skills.abilities[key].name }}</strong>
+                        </li>
+                        <li ng-repeat="(info, value) in hero.skills.abilities[key].info" class="list-group-item">
+                            <strong>{{ info }}:</strong> {{ value}}
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+            </div>
+            <p ng-show="loreShown">
+                {{ hero.lore }}
+            </p>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img ng-style="maxImageSize" src="assets/images/heroes/{{ hero.name + '.png' }}" alt="{{ hero.name }}"/>
+            </div>
+            <hr/>
+            <ul class="list-group">
+                <li class="list-group-item active text-center">
+                    <strong>Base Hero Stats</strong>
+                </li>
+                <li class="list-group-item" ng-repeat="(type, value) in hero.heroStats">
+                    <strong>{{ type }}:</strong> {{ value }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

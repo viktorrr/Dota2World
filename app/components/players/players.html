@@ -1,0 +1,58 @@
+<div class="container" ng-cloak ng-controller="PlayersCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h1 class="page-header">Player overview</h1>
+                </div>
+                <div class="col-xs-4 pull-right" id="player-search-container">
+                    <div class="pull-right">
+                        <div class="input-group">
+                            <input class="form-control ng-pristine ng-valid" ng-model="search.nickname" id="player-search-input" placeholder="Player nickname" type="text">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="#/players">Players</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3"  ng-repeat="player in players | filter:search:strict | limitTo : 4">
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                </div>
+                <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3" ng-repeat="player in players | filter:search " ng-show="$index >= 4 && $index <=7" >
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                </div>
+                <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3" ng-repeat="player in players | filter:search " ng-show="$index >= 8 && $index <=11" >
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                    </div>
+                <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
+            </div>
+        </div>
+    </div>
+</div>

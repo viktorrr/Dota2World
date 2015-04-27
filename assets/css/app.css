@@ -1,0 +1,184 @@
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #101010;
+}
+
+.table>tbody>tr.info>td {
+    background-color: #F7F7F7;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* News */
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    margin: 10px 0;
+}
+
+.signature-heroes-image-container {
+    width: 30%;
+}
+
+/* Upcoming matches styles */
+
+#upcoming-matches-container img {
+    width: 35px;
+    height: 20px;
+}
+
+#upcoming-matches-container tbody > tr:nth-child(n) > td:nth-child(2n+1) {
+    width: 45%;
+}
+
+#upcoming-matches-container table,
+#live-streams {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#live-streams table {
+    margin-bottom: 0;
+}
+
+#live-streams tr:nth-child(n + 1) {
+    background-color: white;
+}
+
+#upcoming-matches-container .panel-body {
+    padding: 0;
+}
+
+#upcoming-matches-container .panel-body p {
+    margin-left: 5px;
+}
+
+/* Live Streams styles */
+
+#live-streams > .panel-body {
+    padding: 0;
+}
+
+.live-stream-dark a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Items Preview Styles */
+
+#items-preview-container h1 {
+    font-size: 62px;
+}
+
+#items-preview-container p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+#items-preview-container .btn-primary,
+#items-preview-container .well
+{
+    margin-right: 10px;
+}
+
+#player-details-container {
+    padding: 0 15px;
+}
+
+#player-details-container h2 {
+    margin: 0 0 20px 0;
+}
+
+.player-profile-picture-container {
+    width: 100%;
+    height: 275px;
+}
+
+.player-profile-picture {
+    width: 100%;
+    height: 100%;
+}
+
+#player-search-container {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+}
+
+/* Footer Styles */
+
+div.news-tags ul li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+.fa-2x {
+    margin-right: 25px;
+}
+
+/* Responsive Styles */
+.well {
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}

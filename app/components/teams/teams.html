@@ -1,0 +1,59 @@
+<div class="container" ng-cloak ng-controller="TeamsCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h1 class="page-header">Teams overview</h1>
+                </div>
+                <div class="col-xs-4 pull-right" id="player-search-container">
+                    <div class="pull-right">
+                        <div class="input-group">
+                            <input class="form-control ng-pristine ng-valid" ng-model="search" id="player-search-input" placeholder="Team..." type="text">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="#/teams">Teams</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3"  ng-repeat="team in teams | filter:search:strict | limitTo : 4">
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/teams/' + team.objectId }}"><img src="{{ 'assets/images/teams/' + team.name + '.png' }}" ng-style="maxImageSize" alt="{{ team.name }}"></a>
+                </div>
+                <p class="text-center"><strong>{{ team.name }}</strong></p>
+                <p class="text-center">{{ team.wins + " / " + team.loses + " (" }}{{ (team.wins / (team.wins + team.loses) * 100 ) | number : 2  }} %)</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3" ng-repeat="team in teams | filter:search " ng-show="$index >= 4 && $index <=7" >
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                </div>
+                <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-12 col-md-3" ng-repeat="team in teams | filter:search " ng-show="$index >= 8 && $index <=11" >
+                <div class="player-profile-picture-container">
+                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                </div>
+                <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
+            </div>
+        </div>
+    </div>
+</div>
