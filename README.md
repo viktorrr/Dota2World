@@ -9,6 +9,6 @@ This is an AngularJS-based Single-Page Application. You can freely find informat
 * Upcoming matches
 * Live streams 
 
-Live demo with fake data on a free cloud database @ Parse.com : [Click][https://rawgit.com/viktorrr/Dota2World/master/index.html#/]
+Live demo with fake data on a free cloud database @ Parse.com : [Click](https://rawgit.com/viktorrr/Dota2World/master/index.html#/)
 
 _Note: This project is just for educational purposes only!_
