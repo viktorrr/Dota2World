@@ -1,2 +1,10 @@
-# Dota2World
-A simple blog for Dota 2.
+### Welcome to Dota2world
+
+This is an AngularJS-based Single-Page Application. You can freely find information about the game - 
+* Articles - everything related to the game (patches, team roster changes, player interviews, tournaments announcements etc.)
+* Heroes - stats, skills, roles etc.
+* In-game items
+* Professional players
+* Professional teams
+* Upcoming matches
+* Live streams
