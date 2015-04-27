@@ -8,3 +8,5 @@ This is an AngularJS-based Single-Page Application. You can freely find informat
 * Professional teams
 * Upcoming matches
 * Live streams
+
+_Note: This project is just for educational purposes only!_
