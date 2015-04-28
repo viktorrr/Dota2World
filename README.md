@@ -9,7 +9,7 @@ Dota2world is an AngularJS-based Single-Page Application. You can freely find in
 * Professional players
 * Professional teams
 * Upcoming matches
-* Live streams
+* Live streams 
 
 Live demo with fake data on a free cloud database @ Parse.com : [Click](https://rawgit.com/viktorrr/Dota2World/master/index.html#/)
 
