@@ -1,48 +1,43 @@
 "use strict";
 
 angular.module('dota2world').factory('teamsData',
-    function ($http, ParseRequestHeaders, ParseAPI) {
-        return {
-            getTeamById: function (id) {
-                var queryName = 'Teams',
-                    queryUrl = ParseAPI + queryName + '/' + id,
-                    queryConfig = {
-                        headers: ParseRequestHeaders
-                    };
+    function ($http, ParseAPI) {
+            var queryName = 'Teams',
+                queryUrl = ParseAPI + queryName + '/';
 
-                return $http.get(queryUrl, queryConfig)
+        return {
+            getTeamById: function (id) { 
+                return $http.get(queryUrl + id)
                     .success(function (data) {
                         return data;
+                    })
+                    .error(function (data){
+                        console.warn('------ Could not get team data -------');
+                        console.warn(data);
                     });
             },
             getTeams: function () {
-                var queryName = 'Teams',
-                    req = {
-                        method: 'GET',
-                        url: ParseAPI + queryName,
-                        headers: ParseRequestHeaders
-                    };
-
-                return $http(req)
+                return $http.get(queryUrl)
                     .success(function (data) {
                         return data.results;
                     })
                     .error(function (data) {
-                        console.warn('------ DATA -------');
+                        console.warn('------ Could not get teams data -------');
                         console.warn(data);
                     });
             },
             getTeamRole: function (id) {
                 var queryName = 'TeamRoles',
-                    queryUrl = ParseAPI + queryName + '/' + id,
-                    queryConfig = {
-                        headers: ParseRequestHeaders
-                    };
+                    queryUrl = ParseAPI + queryName + '/' + id;
 
-                return $http.get(queryUrl, queryConfig)
+                return $http.get(queryUrl)
                     .success(function (data) {
                         return data;
-                    });
+                    })
+                    .error(function (data) {
+                        console.warn('------ Could not get team roles data -------');
+                        console.warn(data);
+                    });;
             }
         }
     });

@@ -37,9 +37,9 @@
                     redirectTo: '/'
                 });
         })
-        .constant('ParseRequestHeaders', {
-            'X-Parse-Application-Id': 'y400TwaOG7VGAc5XulW1NrGOj6HwjEFhDAJAhtw1',
-            "X-Parse-REST-API-Key": 'LSors67l3LYxe5pfQLQVQ5cZmGgCwThuMprtP608'
-        })
+		.config(['$httpProvider', function ($httpProvider) {
+		    $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'y400TwaOG7VGAc5XulW1NrGOj6HwjEFhDAJAhtw1';
+		    $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'LSors67l3LYxe5pfQLQVQ5cZmGgCwThuMprtP608';
+		}])
         .constant('ParseAPI', 'https://api.parse.com/1/classes/');
 })();

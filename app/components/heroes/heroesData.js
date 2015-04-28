@@ -2,33 +2,28 @@
     "use strict";
 
     angular.module('dota2world').factory('heroesData',
-        function heroesData($http, ParseRequestHeaders, ParseAPI) {
+        function heroesData($http, ParseAPI) {
+            var queryName = 'Heroes',
+                queryUrl = ParseAPI + queryName + '/';
+
             return {
                 getHeroById: function (id) {
-                    var queryName = 'Heroes';
-                    return $http.get(ParseAPI + queryName + '/' + id, {headers: ParseRequestHeaders })
+                    return $http.get(queryUrl + id)
                         .success(function (data) {
-                            //console.log(data);
                             return data;
                         })
                         .error(function (data) {
-                            console.warn('--- ERROR ---');
+                            console.warn('--- Could not get hero data ---');
                             console.warn(data);
                         });
                 },
                 getHeroes: function () {
-                    var queryName = 'Heroes',
-                        req = {
-                            method: 'GET',
-                            url: ParseAPI + queryName,
-                            headers: ParseRequestHeaders
-                        };
-                    return $http(req)
+                    return $http.get(queryUrl)
                         .success(function (data) {
                             return data;
                         })
                         .error(function (data) {
-                            console.warn('------ DATA -------');
+                            console.warn('------ Could not get heroes data -------');
                             console.warn(data);
                         });
                 }
