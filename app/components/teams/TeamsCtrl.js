@@ -10,9 +10,8 @@ angular.module('dota2world').controller('TeamsCtrl',
         };
 
         teamsData.getTeams()
-            .then(function (teams) {
-                $scope.teams = teams.data.results;
-                //console.log($scope.teams);
+            .success(function (teams) {
+                $scope.teams = teams;
             });
     }
 );

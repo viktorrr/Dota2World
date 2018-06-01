@@ -8,11 +8,11 @@
                 <div class="col-xs-4 pull-right" id="player-search-container">
                     <div class="pull-right">
                         <div class="input-group">
-                            <input class="form-control ng-pristine ng-valid" ng-model="search.nickname" id="player-search-input" placeholder="Player nickname" type="text">
+                            <input class="form-control ng-pristine ng-valid" ng-model="search.nickname" id="player-search-input" placeholder="Player..." type="text">
                             <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">
-                                  <i class="fa fa-search"></i>
-                              </button>
+                                <button class="btn btn-default" type="button">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
                             </span>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
         <div class="col-md-12">
             <div class="col-sm-12 col-md-3"  ng-repeat="player in players | filter:search:strict | limitTo : 4">
                 <div class="player-profile-picture-container">
-                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                    <a href="{{ '#/players/' + player.id }}"><img src="{{ 'assets/images/players/' + player.id + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
                 </div>
                 <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
             </div>
@@ -39,7 +39,7 @@
         <div class="col-md-12">
             <div class="col-sm-12 col-md-3" ng-repeat="player in players | filter:search " ng-show="$index >= 4 && $index <=7" >
                 <div class="player-profile-picture-container">
-                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                    <a href="{{ '#/players/' + player.id }}"><img src="{{ 'assets/images/players/' + player.id + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
                 </div>
                 <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
             </div>
@@ -49,7 +49,7 @@
         <div class="col-md-12">
             <div class="col-sm-12 col-md-3" ng-repeat="player in players | filter:search " ng-show="$index >= 8 && $index <=11" >
                 <div class="player-profile-picture-container">
-                    <a href="{{ '#/players/' + player.objectId }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
+                    <a href="{{ '#/players/' + player.id }}"><img src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" class="player-profile-picture" alt="{{ player.nickname }}"></a>
                     </div>
                 <p class="text-center">{{ player.firstName }} "<strong>{{ player.nickname }}</strong>" {{ player.lastName }}</p>
             </div>

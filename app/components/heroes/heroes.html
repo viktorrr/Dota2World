@@ -82,7 +82,7 @@
     <div class="row">
         <div class="col-md-3" ng-repeat="hero in heroes">
             <h4 class="text-center"><strong>{{ hero.name }}</strong></h4>
-            <a href="{{ '#/heroes/' + hero.objectId }}">
+            <a href="{{ '#/heroes/' + hero.id }}">
                 <img class="img-responsive img-hover img-related" src="{{ 'assets/images/' + hero.name + '.jpg' }}" alt="{{ hero.name }}">
             </a>
         </div>

@@ -1,12 +1,12 @@
 "use strict";
 
 angular.module('dota2world').controller('PlayersCtrl',
-    function PlayersCtrl($scope, $routeParams, playersData) {
+    function PlayersCtrl($scope, playersData) {
         $scope.players = {};
 
         playersData.getPlayers()
-            .then(function (players) {
-                $scope.players = players.data.results;
+            .success(function (players) {
+                $scope.players = players;
             });
     }
 );

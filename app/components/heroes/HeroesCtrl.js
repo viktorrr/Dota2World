@@ -8,20 +8,23 @@
             $scope.selectedHero = { };
 
             heroesData.getHeroes()
-                .then(function (heroes) {
-                    $scope.heroes = heroes.data.results;
+                .success(function(heroes) {
+                    $scope.heroes = heroes;
                 });
 
             $scope.searchInputStyle = {
                 width : '80%'
             };
 
-            $scope.$watch(function() { return $scope.selectedHero },
+            $scope.$watch(
+                function() { 
+                    return $scope.selectedHero 
+                },
                 function(newValue) {
                     if (newValue.title) {
                         $scope.heroes.forEach(function (hero) {
                             if (hero.name === newValue.title) {
-                                $location.path('/heroes/' +     hero.objectId)
+                                $location.path('/heroes/' + hero.id)
                             }
                         })
                     }

@@ -20,23 +20,23 @@
             <p><strong>Common Team Role(s): </strong>{{ player.position.name }}</p>
             <p><strong>Social media links:</strong></p>
             <ul class="breadcrumb">
-                <li>
-                    <a href="{{ 'http://twitch.tv/' + player.twitch }}"> <i class="fa fa-twitch fa-2x"></i></a>
+                <li ng-if="player.twitch">
+                    <a href="{{ player.twitch }}"> <i class="fa fa-twitch fa-2x"></i></a>
                 </li>
-                <li>
-                    <a href="{{ 'http://facebook.com/' + player.facebook }}"> <i class="fa fa-facebook fa-2x"></i></a>
+                <li ng-if="player.facebook">
+                    <a href="{{ player.facebook }}"> <i class="fa fa-facebook fa-2x"></i></a>
                 </li>
-                <li>
-                    <a href="{{ 'http://twitter.com/' + player.twitter }}"> <i class="fa fa-twitter fa-2x"></i></a>
+                <li ng-if="player.twitter">
+                    <a href="{{ player.twitter }}"> <i class="fa fa-twitter fa-2x"></i></a>
                 </li>
-                <li>
-                    <a href="http://steampowered.com"> <i class="fa fa-steam fa-2x"></i></a>
+                <li ng-if="player.steam">
+                    <a href="{{ player.steam }}"> <i class="fa fa-steam fa-2x"></i></a>
                 </li>
             </ul>
         </div>
         <div class="col-md-4">
             <div>
-                <img class="image-container" src="{{ 'assets/images/teams/' + player.nickname + '.jpg' }}" alt="{{ player.nickname }}"/>
+                <img class="image-container" src="{{ 'assets/images/players/' + player.id + '.jpg' }}" alt="{{ player.nickname }}"/>
             </div>
         </div>
         </div>

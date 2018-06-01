@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 1,
+        "secondTeam": 2
+    },
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 1,
+        "secondTeam": 3
+    },
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 3,
+        "secondTeam": 2
+    },
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 2,
+        "secondTeam": 4
+    },
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 4,
+        "secondTeam": 1
+    },
+    {
+        "date": "2018-05-28T10:15:41.174Z",
+        "firstTeam": 3,
+        "secondTeam": 4
+    }
+]

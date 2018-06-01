@@ -26,9 +26,10 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="player in players">
+                                <p>{{ player }}</p>
                                 <td>{{ player.nickname }}</td>
                                 <td>{{ player.firstName + " " + player.lastName }}</td>
-                                <td>{{ player.teamJoinDate.iso | date : 'MM/dd/yyyy'}}</td>
+                                <td>{{ player.teamJoinDate | date : 'MM/dd/yyyy'}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -37,7 +38,7 @@
         </div>
         <div class="col-md-4">
             <div>
-                <img class="image-container" src="assets/images/teams/{{ team.name + '.png' }}" alt="C9"/></div>
+                <img class="image-container" src="assets/images/teams/{{ team.id + '.png' }}" alt="C9"/></div>
         </div>
     </div>
 </div>

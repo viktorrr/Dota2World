@@ -7,8 +7,8 @@
             $scope.hero = {};
 
             heroesData.getHeroById($routeParams.id)
-                .then(function (hero) {
-                    $scope.hero = hero.data;
+                .success(function (hero) {
+                    $scope.hero = hero;
                 });
 
             $scope.baseStatsShown = false;
@@ -18,7 +18,6 @@
             $scope.shkillsShowText = 'Show';
 
             $scope.showAndHideAbilities = showAndHideAbilities;
-
 
             $scope.loreShown = false;
             $scope.loreShowText = 'Show';

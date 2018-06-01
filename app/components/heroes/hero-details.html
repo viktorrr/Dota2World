@@ -21,8 +21,8 @@
                 <button ng-click="showAndHideLore()" class="btn btn-primary btn-sm pull-right">{{ loreShowText }}</button>
             </p>
             <hr/>
-            <p ng-repeat="(type, value) in hero.stats">
-                <img src="{{ 'assets/images/heroes/' + type + '-icon.png' }}" alt="{{ type }}"/> <strong> {{ type }}:</strong> {{ value }} (per level)
+            <p ng-repeat="(type, stat) in hero.stats">
+                <img src="{{ 'assets/images/heroes/' + type + '-icon.png' }}" alt="{{ type }}"/> <strong> {{ type }}:</strong> {{ stat.base }} + {{ stat.gain }} per level
             </p>
             <hr/>
             <ul class="list-group">
@@ -30,7 +30,7 @@
                     <strong>Ultimate: {{ hero.skills.ultimate.name }}</strong>
                 </li>
                 <li ng-repeat="(info, value) in hero.skills.ultimate.info" class="list-group-item">
-                    {{ info }}:</strong> {{ value}}
+                    {{ info }}:</strong> {{ value }}
                 </li>
             </ul>
         </div>
@@ -39,7 +39,7 @@
                 <div ng-repeat="(key, value) in hero.skills.abilities">
                     <ul class="list-group">
                         <li class="list-group-item active">
-                            <strong>{{ hero.skills.abilities[key].name }}</strong>
+                            <strong>{{ key }}</strong>
                         </li>
                         <li ng-repeat="(info, value) in hero.skills.abilities[key].info" class="list-group-item">
                             <strong>{{ info }}:</strong> {{ value}}

@@ -8,8 +8,8 @@
             $scope.searchResults = {};
 
             articlesData.getArticlesById($routeParams.id)
-                .then(function(article) {
-                    $scope.article = article.data;
+                .success(function(article) {
+                    $scope.article = article;
                 });
 
             //articlesData.getArticles()
